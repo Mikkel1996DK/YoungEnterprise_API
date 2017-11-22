@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using YoungEnterprise_API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace YoungEnterprise_API
 {
@@ -22,6 +24,9 @@ namespace YoungEnterprise_API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            var connection = @"Server=(localdb)\mssqllocaldb;Database=DB_YoungEnterprise;Trusted_Connection=True;";
+            services.AddDbContext<DB_YoungEnterpriseContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
