@@ -24,9 +24,9 @@ namespace YoungEnterprise_API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            //DESKTOP-6D9EMB1 (Mikkel)
-            //DESKTOP-ACNIRC0 (Louise)
-            var connection = @"Server=DESKTOP-ACNIRC0;Database=DB_YoungEnterprise;Trusted_Connection=True;";
+            services.AddCors();
+            // (localdb)\mssqllocaldb
+            var connection = @"Server=DESKTOP-6D9EMB1;Database=DB_YoungEnterprise;Trusted_Connection=True;";
             services.AddDbContext<DB_YoungEnterpriseContext>(options => options.UseSqlServer(connection));
         }
 

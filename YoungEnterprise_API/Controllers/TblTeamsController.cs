@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using YoungEnterprise_API.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace YoungEnterprise_API.Controllers
 {
     [Produces("application/json")]
     [Route("api/TblTeams")]
+    [EnableCors("AllowSpecificOrigin")]
     public class TblTeamsController : Controller
     {
         private readonly DB_YoungEnterpriseContext _context;
