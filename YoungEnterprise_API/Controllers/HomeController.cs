@@ -5,9 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using YoungEnterprise_API.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace YoungEnterprise_API.Controllers
 {
+    [EnableCors("AllowSpecificOrigin")]
     public class HomeController : Controller
     {
         public IActionResult Index()
