@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using YoungEnterprise_API.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Cors;
 
 namespace YoungEnterprise_API
 {
@@ -25,8 +26,8 @@ namespace YoungEnterprise_API
         {
             services.AddMvc();
             services.AddCors();
-            // (localdb)\mssqllocaldb
-            var connection = @"Server=DESKTOP-6D9EMB1;Database=DB_YoungEnterprise;Trusted_Connection=True;";
+                  // (localdb)\mssqllocaldb
+                  var connection = @"Server=DESKTOP-ACNIRC0;Database=DB_YoungEnterprise;Trusted_Connection=True;";
             services.AddDbContext<DB_YoungEnterpriseContext>(options => options.UseSqlServer(connection));
         }
 
